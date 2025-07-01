@@ -1,0 +1,4 @@
+                       //[\] spec char
+    cout<<"Egy x és no [\\n] ";
+    cout<<"masodik sor";
+}

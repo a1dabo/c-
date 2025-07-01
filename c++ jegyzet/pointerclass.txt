@@ -1,0 +1,47 @@
+#include <iostream>
+#include "proba1.h"
+
+int main()
+{
+    int a=10;
+    proba1<int> a1(&a);
+    a=10000;
+    std::cout<< a1.get() << std::endl;
+    a1.rew();
+    std::cout<< a1.get() << std::endl;
+}
+
+#ifndef PROBA1_H
+#define PROBA1_H
+
+
+
+template <typename T>
+class proba1
+{
+private:
+    T* a;/* data */
+    T rea;
+public:
+    proba1(T* a)
+    {
+        this->rea=*a;       //értéket derefál
+        this->a=a;          //elmenti a cimét
+    }
+
+    int get()
+    {
+        return *this->a;
+    }
+
+    void rew()
+    {
+        *this->a=this->rea;
+    }
+
+};
+
+
+
+
+#endif

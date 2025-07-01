@@ -1,0 +1,6 @@
+#ifndef ALMA_H        // Ha az ALMA_H makró még nincs definiálva, akkor definiáljuk a fejléc tartalmát
+#define ALMA_H        // Definiáljuk az ALMA_H makrót, hogy elkerüljük a többszöri beillesztést
+
+#define ALMA 5        // Egy ALMA nevű makrót definiálunk, értéke 5
+
+#endif                // Az #ifndef-hez tartozó lezárás; ha már volt ALMA_H, akkor ezt a részt kihagyja a fordító

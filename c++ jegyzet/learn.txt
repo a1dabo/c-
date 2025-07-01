@@ -1,0 +1,8 @@
+Szekvenciális konténerek:
+ std::vector
+ std::string
+ std::list
+ std::deque
+ Asszociatív konténerek:
+ std::set, std::multiset
+ std::map, std::multimap

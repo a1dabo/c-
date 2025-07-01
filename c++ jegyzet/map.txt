@@ -1,0 +1,47 @@
+//const copy    
+
+auto_map(const auto_map& other) {
+        for (const auto& [k, v] : other.map) {
+            map[new Key(*k)] = new T(*v);
+        }
+    }
+
+
+
+
+std::map<int,int*> copy(std::map<int,int>& map)
+{
+    std::map<int,int*> retmap;
+    for (auto& pair:map)
+    {
+        retmap[pair.first+10]=&pair.second;
+    }
+    return retmap;
+}
+
+
+//két value +
+pmap operator+(const pmap& other) const
+    {   
+    pmap result;
+
+    for (auto& [key, val] : this->inmap)
+    {
+        if (other.inmap.count(key))
+        {
+            // új érték, külön memória
+            T* newVal = new T(*val + *other.inmap.at(key));
+            result.inmap[key] = newVal;
+        }
+    }
+
+    return result;
+    }
+
+dtor hozzá
+~pmap() {
+    for (auto& [key, val] : inmap)
+    {
+        delete val;
+    }
+    }

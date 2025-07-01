@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+template<class T>
+class array_util {
+public:
+    std::vector<T*> array;
+
+    array_util(T *inar, int size) {
+        for (int i = 0; i < size; i++) {
+            array.push_back(&inar[i]);  // Csak mutatót tárolunk, nem másolunk
+        }
+    }
+
+    ~array_util() {
+        // Üres destruktor: nem szabadítunk fel, mert nem birtokoljuk az elemeket
+    }
+
+    array_util& copy(const array_util& other) {
+        size_t min_size = std::min(array.size(), other.array.size());
+        for (size_t i = 0; i < min_size; i++) {
+            *array[i] = *other.array[i];  // Értékek másolása, nem mutatók
+        }
+        return *this;
+    }
+
+    array_util& operator=(const array_util& other) {
+        size_t min_size = std::min(array.size(), other.array.size());
+        for (size_t i = 0; i < min_size; i++) {
+            *array[i] = *other.array[i];  // Értékek másolása, nem mutatók
+        }
+        return *this;
+    }
+
+    bool equals(const array_util& other) const {
+        if (array.size() != other.array.size()) {
+            return false;
+        }
+        for (size_t i = 0; i < array.size(); i++) {
+            if (*array[i] != *other.array[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+};
+

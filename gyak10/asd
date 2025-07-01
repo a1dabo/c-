@@ -1,0 +1,92 @@
+#ifndef ARVIOPS_H
+#define ARVIOPS_H
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+template <class T>
+class array_view_operations
+{
+    std::vector<T *> ptrvec;
+    std::vector<T> origin;
+
+public:
+    array_view_operations(T *arr, int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            ptrvec.push_back(&arr[i]);
+            origin.push_back(arr[i]);
+        }
+    }
+
+    ~array_view_operations()
+    {
+        reset();
+    }
+
+    void reverse()
+    {
+        int size = origin.size();
+        for (int i = 0; i < size; i++)
+        {
+            *ptrvec[i] = *ptrvec[size - i - 1];
+        }
+    }
+
+    void reset()
+    {
+        int size = origin.size();
+        for (int i = 0; i < size; i++)
+        {
+            *ptrvec[i] = origin[i];
+        }
+    }
+
+    void print()
+    {
+        for (int i = 0; i < ptrvec.size(); i++)
+        {
+            std::cout << ptrvec[i] << ' ' << *ptrvec[i] << std::endl;
+        }
+        std::cout << std::endl;
+    }
+
+    void shift(int n)
+    {
+        int size = origin.size();
+        n = n % size;
+        if (n == 0 || size == 0)
+            return;
+
+        if (n > 0)
+        {
+
+            for (int i = 0; i < n; i++)
+            {
+                T temp = *ptrvec[size - 1];
+                // 1 2 3 4  4 1 2 3
+                for (int i = 0; i < size - 1; i++)
+                {
+                    *ptrvec[i + 1] = *ptrvec[i];
+                }
+                *ptrvec[0] = temp;
+            }
+        }
+        if (n < 0)
+        {
+
+            for (int i = 0; i < n * -1; i++)
+            {
+                T temp = *ptrvec[0];
+                // 1 2 3 4  2 3 4 1
+                for (int i = 1; i < size - 1; i++)
+                {
+                    *ptrvec[i - 1] = *ptrvec[i];
+                }
+                *ptrvec[size - 1] = temp;
+            }
+        }
+    }
+};
+#endif

@@ -1,0 +1,12 @@
+complex operator+( const complex& lhs, const complex& rhs )
+{
+  std::cout << "Hello from operator+" << std::endl;
+  return complex( lhs.get_re() + rhs.get_re(), lhs.get_im() + rhs.get_im() );
+}
+
+
+bool operator==( const complex& lhs, const complex& rhs )
+{
+  return lhs.get_re() == rhs.get_re() &&
+         lhs.get_im() == rhs.get_im();
+}

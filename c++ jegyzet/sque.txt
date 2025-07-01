@@ -1,0 +1,42 @@
+#ifndef STQUE_H
+#define STQUE_H
+
+#include <stack>
+#include <queue>
+#include <type_traits>
+
+template <class T, bool isStack, class Container = std::deque<T>>
+class StackQueue
+{
+
+    using StackType = std::stack<T, Container>;
+    using QueueType = std::queue<T, Container>;
+    using InConLib = typename std::conditional<isStack, StackType, QueueType>::type;
+
+    InConLib instl;
+
+public:
+    void push(const T &t)
+    {
+        instl.push(t);
+    }
+
+    T get() const
+    {
+        if constexpr (isStack)
+        {
+            return instl.top();
+        }
+        else
+        {
+            return instl.front();
+        }
+    }
+
+    int size() const
+    {
+        return instl.size();
+    }
+};
+
+#endif
