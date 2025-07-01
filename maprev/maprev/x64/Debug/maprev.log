@@ -1,0 +1,21 @@
+﻿  maprev.cpp
+C:\Users\Bodi\Desktop\c++ cucc\maprev\maprev.cpp(62,8): error C2039: 'set_partition_key': is not a member of 'map_accumulate_partition<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+      C:\Users\Bodi\Desktop\c++ cucc\maprev\mapaccpart.h(12,7):
+      see declaration of 'map_accumulate_partition<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+  
+C:\Users\Bodi\Desktop\c++ cucc\maprev\maprev.cpp(63,8): error C2039: 'set_partition_key': is not a member of 'map_accumulate_partition<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+      C:\Users\Bodi\Desktop\c++ cucc\maprev\mapaccpart.h(12,7):
+      see declaration of 'map_accumulate_partition<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+  
+C:\Users\Bodi\Desktop\c++ cucc\maprev\maprev.cpp(64,8): error C2039: 'set_partition_key': is not a member of 'map_accumulate_partition<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+      C:\Users\Bodi\Desktop\c++ cucc\maprev\mapaccpart.h(12,7):
+      see declaration of 'map_accumulate_partition<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+  
+C:\Users\Bodi\Desktop\c++ cucc\maprev\maprev.cpp(67,9): error C2039: 'set_partition_key': is not a member of 'map_accumulate_partition<std::string,track_length,std::less<std::string>,std::allocator<std::pair<const std::string,track_length>>>'
+      C:\Users\Bodi\Desktop\c++ cucc\maprev\mapaccpart.h(12,7):
+      see declaration of 'map_accumulate_partition<std::string,track_length,std::less<std::string>,std::allocator<std::pair<const std::string,track_length>>>'
+  
+C:\Users\Bodi\Desktop\c++ cucc\maprev\maprev.cpp(68,9): error C2039: 'set_partition_key': is not a member of 'map_accumulate_partition<std::string,track_length,std::less<std::string>,std::allocator<std::pair<const std::string,track_length>>>'
+      C:\Users\Bodi\Desktop\c++ cucc\maprev\mapaccpart.h(12,7):
+      see declaration of 'map_accumulate_partition<std::string,track_length,std::less<std::string>,std::allocator<std::pair<const std::string,track_length>>>'
+  
